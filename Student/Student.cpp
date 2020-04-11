@@ -14,8 +14,9 @@
 #include <iomanip>
 
 void populate(Student **ptr){
+    Student **studentList = new Student*[3];
+    studentList[0] = new Student{genRandID()," ", genRandGrade(), genRandDate(), "Long Beach, CA"};
     srand( static_cast<unsigned int>(time(NULL)));
-    
     ptr[0] = new Student{genRandID()," ", genRandGrade(), genRandDate(), "Long Beach, CA"};
     ptr[1] = new Student{genRandID()," ", genRandGrade(), genRandDate(), "Seal Beach, CA"};
     ptr[2] = new Student{genRandID()," ", genRandGrade(), genRandDate(), "Garden Grove, CA"};
@@ -25,17 +26,15 @@ void populate(Student **ptr){
     ptr[6] = new Student{genRandID()," ", genRandGrade(), genRandDate(), "San Pedro, CA"};
     ptr[7] = new Student{genRandID()," ", genRandGrade(), genRandDate(), "Lakewood, CA"};
     ptr[8] = new Student{genRandID()," ", genRandGrade(), genRandDate(), "Huntington, CA"};
-    
-    strcpy(ptr[0]->name, "Aimi Ross");
-    strcpy(ptr[1]->name, "Travis Ross");
-    strcpy(ptr[2]->name, "Pam Ross");
-    strcpy(ptr[3]->name, "Bob Ross");
-    strcpy(ptr[4]->name, "Snugglez Ross");
-    strcpy(ptr[5]->name, "Nyt Nyt Ross");
-    strcpy(ptr[6]->name, "Hiromi Touyama");
-    strcpy(ptr[7]->name, "Minami Furugen");
-    strcpy(ptr[8]->name, "Nanami Furugen");
-    
+    strcpy(ptr[0]->name, "Master Gold");
+    strcpy(ptr[1]->name, "Tom Thumb");
+    strcpy(ptr[2]->name, "Fred Flintstone");
+    strcpy(ptr[3]->name, "Justin Beiber");
+    strcpy(ptr[4]->name, "Enon Kawatani");
+    strcpy(ptr[5]->name, "Sponge Bob");
+    strcpy(ptr[6]->name, "Tom Cruise");
+    strcpy(ptr[7]->name, "Nicolas Cage");
+    strcpy(ptr[8]->name, "Sylvester Stallone");
 }
 
 int genRandID(){
@@ -70,7 +69,6 @@ void displayOriginal(Student **s){
 void sortByID(Student **s){
     cout << left << setw(20) << "StudentID" << left << setw(20) << "Name" << left <<  setw(20) << "Grade" << left <<  setw(20) << "Birthday" << left << setw(20) << "Home Town" << endl;
     cout << left << setw(20) << "---------" << left << setw(20) << "----" << left <<  setw(20) << "-----" << left <<  setw(20) << "--------" << left << setw(20) << "---------" << endl;
-    
     int i, j;
     for( i = 0; i < 9; i++ ){
         for( j = 9 - 1; j > i; j-- ){
@@ -89,10 +87,9 @@ void sortByID(Student **s){
 }
 
 
-void sortByGrade(Student **s){ //
+void sortByGrade(Student **s){
     cout << left << setw(20) << "Grade" << left << setw(20) << "Name" << left <<  setw(20) << "StudentID" << left <<  setw(20) << "Birthday" << left << setw(20) << "Home Town" << endl;
     cout << left << setw(20) << "-----" << left << setw(20) << "----" << left <<  setw(20) << "---------" << left <<  setw(20) << "--------" << left << setw(20) << "---------" << endl;
-    
     int i, j;
     for( i = 0; i < 9; i++ ){
         for( j = 9 - 1; j > i; j-- ){
@@ -110,10 +107,9 @@ void sortByGrade(Student **s){ //
     }
 }
 
-void sortByName(Student **s){ //
+void sortByName(Student **s){
     cout << left << setw(20) << "Name" << left << setw(20) << "Grade" << left <<  setw(20) << "StudentID" << left <<  setw(20) << "Birthday" << left << setw(20) << "Home Town" << endl;
     cout << left << setw(20) << "----" << left << setw(20) << "-----" << left <<  setw(20) << "---------" << left <<  setw(20) << "--------" << left << setw(20) << "---------" << endl;
-    
     int i, j;
     for( i = 0; i < 9; i++ ){
         for( j = 9 - 1; j > i; j-- ){
@@ -131,10 +127,9 @@ void sortByName(Student **s){ //
     }
 }
 
-void sortByHomeTown(Student **s){ //
+void sortByHomeTown(Student **s){
     cout << left << setw(20) << "Home Town" << left << setw(20) << "Name" << left <<  setw(20) << "StudentID" << left <<  setw(20) << "Birthday" << left << setw(20) << "Grade" << endl;
     cout << left << setw(20) << "---------" << left << setw(20) << "----" << left <<  setw(20) << "---------" << left <<  setw(20) << "--------" << left << setw(20) << "-----" << endl;
-    
     int i, j;
     for( i = 0; i < 9; i++ ){
         for( j = 9 - 1; j > i; j-- ){
@@ -152,10 +147,9 @@ void sortByHomeTown(Student **s){ //
     }
 }
 
-void sortByBday(Student **s){ //
+void sortByBday(Student **s){
     cout << left << setw(20) << "Birthday" << left << setw(20) << "Name" << left <<  setw(20) << "StudentID" << left <<  setw(20) << "Home Town" << left << setw(20) << "Grade" << endl;
     cout << left << setw(20) << "--------" << left << setw(20) << "----" << left <<  setw(20) << "---------" << left <<  setw(20) << "---------" << left << setw(20) << "-----" << endl;
-    
     int i, j;
     for( i = 0; i < 9; i++ ){
         for( j = 9 - 1; j > i; j-- ){
